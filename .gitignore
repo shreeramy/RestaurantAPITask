@@ -1,0 +1,15 @@
+# Environment 
+venv/
+env/
+
+# Media 
+media/
+
+# Env file
+.env
+
+
+# PYC Files
+__pycache__/
+*.pyc
+
