@@ -55,3 +55,6 @@ https://documenter.getpostman.com/view/11889792/2s8YeoQZ9J
 
   5. Feedback 
     In this api visitor/customer are giving feedback for daily menu. One customer are giving feedback in one day each restraunt and customer giving vote 1-5.
+
+  6. Top 3 Restraunt
+    In this api see the list of top three restaurants. This top 3 restaurants are got high vote from customer.
