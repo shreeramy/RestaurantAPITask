@@ -24,6 +24,8 @@ python version = 3.9
 
 ## API Documentations
 
+https://documenter.getpostman.com/view/11889792/2s8YeoQZ9J
+
 ### Account Section
   1. Account Create
     In this api user can giving some basic information for raustraunt owner and as well as giving restraunt information as key name is "restraunt_data" in account create api.
@@ -50,7 +52,3 @@ python version = 3.9
 
   4. Show Daily Menu
     In this api getting daily menu list for specific restraunt for giving restraunt id there is no need to be authentication. Daily menu list showing according to date.
-
-
-see example for apis
-https://documenter.getpostman.com/view/11889792/2s8YeoQZ9J
