@@ -37,7 +37,7 @@ services:
       - './.env'
     environment:
       DEBUG: 'true'
-    command: 'sh -c "/code/docker/entrypoint.sh && exec python3 manage.py runserver 0.0.0.0:8000"'
+    command: 'sh -c "/code/entrypoint.sh && exec python3 manage.py runserver 0.0.0.0:8000"'
 
 volumes:
   backend_static:
