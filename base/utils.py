@@ -2,6 +2,7 @@ from django.conf import settings
 import pyotp
 from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
+from datetime import datetime
 
 def getotp():
     secret = pyotp.random_base32()
@@ -29,3 +30,8 @@ def send_otp(context, email, subject):
     )
     mail.attach_alternative(message, 'text/html')
     mail.send()
+
+
+def get_today():
+    today = datetime.now().date()
+    return today

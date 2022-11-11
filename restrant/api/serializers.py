@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from ..models import MainMenu, DailyMenu, Feedback
+from ..models import MainMenu, DailyMenu, Feedback, Restraunt
 
 
 class MainMenuCreateSerializer(serializers.ModelSerializer):
@@ -12,10 +12,21 @@ class DailyMenuCreateSerializer(serializers.ModelSerializer):
         model = DailyMenu
         fields = "__all__"
 
+class RestrauntSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Restraunt
+        fields = "__all__"
+
 class FeedbackSerializer(serializers.ModelSerializer):
+    restraunt = serializers.SerializerMethodField()
     class Meta:
         model = Feedback
-        fields = "__all__"
+        fields = ['restraunt']
+    
+    def get_restraunt(self, instance):
+        data = Restraunt.objects.filter(id=instance).first()
+        serializer = RestrauntSerializer(data)
+        return serializer.data
 
 class DailyMenuSerializer(serializers.ModelSerializer):
     class Meta:

@@ -9,4 +9,5 @@ class Messages:
     MAIN_MENU = "Main menu created successfully"
     DAILY_MANU = "Daily menu created successfully"
     FEEDBACK = "Feedback created successfully"
+    FEEDBACK_NOT_SUBMIT = "feedback is valid once per user a day"
 
