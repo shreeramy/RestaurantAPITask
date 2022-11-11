@@ -54,5 +54,4 @@ https://documenter.getpostman.com/view/11889792/2s8YeoQZ9J
     In this api getting daily menu list for specific restraunt for giving restraunt id there is no need to be authentication. Daily menu list showing according to date.
 
   5. Feedback 
-    In this api visitor/customer are giving feedback for daily menu. One customer are giving feedback in one day each restraunt. 
-    
+    In this api visitor/customer are giving feedback for daily menu. One customer are giving feedback in one day each restraunt and customer giving vote 1-5.
