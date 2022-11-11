@@ -1,0 +1,50 @@
+# Setup docker compose for postgres, pgadmin
+# it'd be nice if the postgres container could run the migrations when first initialised
+
+version: '3.3'
+services:
+  postgres:
+    image: postgres:14.2-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: $DB_USER
+      POSTGRES_PASSWORD: $DB_PASSWORD
+      POSTGRES_DB: $DB_NAME
+    ports:
+      - 5432:5432
+    volumes:
+      - "postgres_data:/var/lib/postgresql"
+    networks:
+      - middleware-net
+
+  backend:
+    container_name: backend
+    restart: always
+    build:
+      context: './'
+    expose:
+      - "8000"
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./:/code
+      - backend_media:/code/media
+    depends_on:
+      - postgres
+    networks:
+      - middleware-net
+    env_file:
+      - './.env'
+    environment:
+      DEBUG: 'true'
+    command: 'sh -c "/code/entrypoint.sh && exec python3 manage.py runserver 0.0.0.0:8000"'
+
+volumes:
+  backend_static:
+  backend_media:
+  postgres_data:
+
+networks:
+  middleware-net:
+    driver: bridge
+  
