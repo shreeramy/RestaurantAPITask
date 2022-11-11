@@ -28,6 +28,8 @@ class DailyMenu(BaseModel):
 
 
 class Feedback(BaseModel):
+    restraunt = models.ForeignKey(Restraunt, on_delete=models.CASCADE, 
+                                  blank=True, null=True)
     name = models.CharField(max_length=100, blank=True, null=True)
     email = models.EmailField()
     message = models.TextField(blank=True, null=True)

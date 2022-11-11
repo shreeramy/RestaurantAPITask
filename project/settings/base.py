@@ -5,7 +5,7 @@ from decouple import config
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-zzl(w@*ca906it$pitv%7u4iutcis%82eja*%m%(vtuvj$f-cg'
+SECRET_KEY = config('SECRET_KEY')
 
 DEBUG = True
 
